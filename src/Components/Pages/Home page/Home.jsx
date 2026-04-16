@@ -40,8 +40,10 @@ const Home = () => {
           <p className="text-gray-400">Interactions This Month</p>
         </div>
       </div>
-      {/* main Section */}
-      <main></main>
+      {/* main Friends CardsSection */}
+      <main>
+        
+      </main>
     </section>
   );
 };

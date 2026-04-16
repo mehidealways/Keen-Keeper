@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://randomuser.me/api/portraits/men/1.jpg",
+    "email": "john.doe@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/2.jpg",
+    "email": "sarah.ahmed@example.com",
+    "days_since_contact": 5,
+    "status": "on_track",
+    "tags": ["work", "designer"],
+    "bio": "Colleague from design team. Very creative and helpful.",
+    "goal": 10,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 3,
+    "name": "Michael Lee",
+    "picture": "https://randomuser.me/api/portraits/men/3.jpg",
+    "email": "michael.lee@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["gym", "fitness"],
+    "bio": "Workout partner. Keeps me motivated.",
+    "goal": 15,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 4,
+    "name": "Emily Johnson",
+    "picture": "https://randomuser.me/api/portraits/women/4.jpg",
+    "email": "emily.johnson@example.com",
+    "days_since_contact": 2,
+    "status": "on_track",
+    "tags": ["neighbor"],
+    "bio": "Lives next door. We often chat in the evening.",
+    "goal": 7,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 5,
+    "name": "David Khan",
+    "picture": "https://randomuser.me/api/portraits/men/5.jpg",
+    "email": "david.khan@example.com",
+    "days_since_contact": 9,
+    "status": "pending",
+    "tags": ["school", "football"],
+    "bio": "School friend. We used to play football together.",
+    "goal": 12,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 6,
+    "name": "Aisha Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/6.jpg",
+    "email": "aisha.rahman@example.com",
+    "days_since_contact": 14,
+    "status": "overdue",
+    "tags": ["family"],
+    "bio": "Cousin. We share family updates regularly.",
+    "goal": 10,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 7,
+    "name": "Chris Martin",
+    "picture": "https://randomuser.me/api/portraits/men/7.jpg",
+    "email": "chris.martin@example.com",
+    "days_since_contact": 3,
+    "status": "on_track",
+    "tags": ["music", "band"],
+    "bio": "Band member. We jam on weekends.",
+    "goal": 7,
+    "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 8,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/8.jpg",
+    "email": "nusrat.jahan@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university"],
+    "bio": "University classmate. Loves photography.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 9,
+    "name": "Ryan Smith",
+    "picture": "https://randomuser.me/api/portraits/men/9.jpg",
+    "email": "ryan.smith@example.com",
+    "days_since_contact": 6,
+    "status": "pending",
+    "tags": ["gaming"],
+    "bio": "Online gaming friend. Plays every weekend.",
+    "goal": 10,
+    "next_due_date": "2026-04-21"
+  },
+  {
+    "id": 10,
+    "name": "Fatima Noor",
+    "picture": "https://randomuser.me/api/portraits/women/10.jpg",
+    "email": "fatima.noor@example.com",
+    "days_since_contact": 1,
+    "status": "on_track",
+    "tags": ["mentor"],
+    "bio": "Mentor in career. Gives valuable advice.",
+    "goal": 7,
+    "next_due_date": "2026-04-24"
+  }
+]
