@@ -21,13 +21,14 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: '/index:true/:id',
+        element: <AddDetails></AddDetails>,
+      },
+      {
         path: '/timeline',
         element: <TimeLine></TimeLine>,
       },
-      {
-        path: '/timeline/:id',
-        element: <AddDetails></AddDetails>,
-      },
+
       {
         path: '/stats',
         element: <Stats></Stats>,

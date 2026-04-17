@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 const FriendCard = ({ friend }) => {
   return (
     <Link
-      to={`/timeline/${friend.id}`}
+      to={`/index:true/${friend.id}`}
       className="border text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition"
     >
       {/* Image */}

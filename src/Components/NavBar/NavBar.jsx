@@ -9,7 +9,9 @@ const NavBar = () => {
   return (
     <div className="shadow">
       <nav className="container flex justify-between items-center mx-auto ">
-        <h2 className="text-xl font-bold">KeenKeeper</h2>
+        <Link to={'/'} className="text-xl btn bg-white border-none font-bold">
+          KeenKeeper
+        </Link>
         <ul className="flex justify-between items-center gap-4 py-4 font-semibold">
           <li>
             <MyNavLink to={'/'}>

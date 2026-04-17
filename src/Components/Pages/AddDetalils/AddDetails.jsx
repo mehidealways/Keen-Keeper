@@ -6,6 +6,8 @@ import { useParams } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 const friendsPromise = fetch('/public/friends.json').then(res => res.json());
 
+
+
 const AddDetails = () => {
   const friends = use(friendsPromise);
   // console.log(friends);
@@ -92,7 +94,7 @@ const AddDetails = () => {
               </h3>
               <p className="text-gray-500 text-sm">
                 Connect every:
-                <span className="font-semibold text-black ml-1">
+                <span className="font-semibold text-black mt-1">
                    { friend.goal} days
                 </span>
               </p>
