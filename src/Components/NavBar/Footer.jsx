@@ -2,7 +2,7 @@ import { FaFacebookF, FaGithub, FaTimes } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-green-900 text-white py-12 px-4 mt-10">
+    <footer className="bg-[#244d3f] text-white py-12 px-4 mt-10">
       <div className="max-w-5xl mx-auto text-center">
         {/* Title */}
         <h1 className="text-4xl font-bold mb-3">KeenKeeper</h1>
