@@ -1,7 +1,7 @@
 import { use, Suspense } from 'react';
 import FriendCard from '../../ui/FriendCard';
 
-const friendsPromise = fetch('/public/friends.json').then(res => res.json());
+const friendsPromise = fetch('/friends.json').then(res => res.json());
 
 const FriendsList = () => {
   const friends = use(friendsPromise);

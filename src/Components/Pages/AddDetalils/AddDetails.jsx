@@ -4,22 +4,35 @@ import { IoArchiveOutline, IoMailOutline } from 'react-icons/io5';
 import { MdDelete, MdLocalPhone } from 'react-icons/md';
 import { useParams } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
-const friendsPromise = fetch('/public/friends.json').then(res => res.json());
 
+const friendsPromise = fetch('/friends.json').then(res => res.json());
 
+// Helper to save event to localStorage
+const addToTimeline = (friendName, action) => {
+  const existing = JSON.parse(localStorage.getItem('timeline') || '[]');
+  const newEntry = {
+    id: Date.now(),
+    friendName,
+    action,
+    date: new Date().toLocaleString(),
+  };
+  localStorage.setItem('timeline', JSON.stringify([newEntry, ...existing]));
+};
 
 const AddDetails = () => {
   const friends = use(friendsPromise);
-  // console.log(friends);
   const { id } = useParams();
-  console.log(id, 'expected id');
-  // console.log(friend);
-  
   const friend = friends.find(friend => friend.id == id);
+
+  const handleAction = (action, message) => {
+    addToTimeline(friend.name, action);
+    toast.success(message);
+  };
+
   return (
     <div className="container mx-auto flex justify-center mt-10">
       <div>
-        <div className="  border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition ">
+        <div className="border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
           <img src={friend.picture} alt="" className="mx-auto" />
           <h2 className="text-xl font-bold">{friend.name}</h2>
           {friend?.tags?.map(tag => (
@@ -37,20 +50,19 @@ const AddDetails = () => {
 
         {/* 3 sections */}
         <div>
-          <div className="  border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <div className="border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
             <p className="flex items-center justify-center gap-2">
               <FaRegBell />
               Snooze 2 weeks
             </p>
           </div>
-          <div className="  border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition ">
+          <div className="border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
             <p className="flex items-center justify-center gap-2">
               <IoArchiveOutline />
               Archive
             </p>
           </div>
-
-          <div className="  border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition ">
+          <div className="border w-75 text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
             <p className="flex items-center justify-center gap-2 text-red-400">
               <MdDelete />
               Delete
@@ -70,14 +82,12 @@ const AddDetails = () => {
               </h2>
               <p className="text-gray-500 text-sm">Days Since Contact</p>
             </div>
-
             <div className="bg-white shadow rounded-xl p-5 text-center">
               <h2 className="text-2xl font-bold text-green-700">
                 {friend.goal}
               </h2>
               <p className="text-gray-500 text-sm">Goal (Days)</p>
             </div>
-
             <div className="bg-white shadow rounded-xl p-5 text-center">
               <h2 className="text-2xl font-bold text-green-700">
                 {friend.next_due_date}
@@ -95,11 +105,11 @@ const AddDetails = () => {
               <p className="text-gray-500 text-sm">
                 Connect every:
                 <span className="font-semibold text-black mt-1">
-                   { friend.goal} days
+                  {' '}
+                  {friend.goal} days
                 </span>
               </p>
             </div>
-
             <button className="bg-gray-100 hover:bg-gray-200 text-sm px-4 py-1.5 rounded">
               Edit
             </button>
@@ -108,11 +118,10 @@ const AddDetails = () => {
           {/* Quick Check-In */}
           <div className="bg-white shadow rounded-xl p-5">
             <h3 className="font-semibold text-gray-700 mb-4">Quick Check-In</h3>
-
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Call Button */}
               <button
-                onClick={() => toast.success('Calling friend...')}
+                onClick={() => handleAction(' Called', 'Calling friend...')}
                 className="flex flex-col items-center justify-center border border-gray-400 rounded-lg p-4 hover:bg-gray-50 transition"
               >
                 <MdLocalPhone className="text-xl" />
@@ -121,7 +130,9 @@ const AddDetails = () => {
 
               {/* Text Button */}
               <button
-                onClick={() => toast.success('Sending message...')}
+                onClick={() =>
+                  handleAction(' Sent a message', 'Sending message...')
+                }
                 className="flex flex-col items-center justify-center border border-gray-400 rounded-lg p-4 hover:bg-gray-50 transition"
               >
                 <IoMailOutline />
@@ -130,7 +141,9 @@ const AddDetails = () => {
 
               {/* Video Button */}
               <button
-                onClick={() => toast.success('Starting video call...')}
+                onClick={() =>
+                  handleAction(' Video called', 'Starting video call...')
+                }
                 className="flex flex-col items-center justify-center border border-gray-400 rounded-lg p-4 hover:bg-gray-50 transition"
               >
                 <FaVideo />
