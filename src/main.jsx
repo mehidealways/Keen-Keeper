@@ -8,6 +8,8 @@ import Root from './Components/RootLayout/Root.jsx';
 import Home from './Components/Pages/Home page/Home.jsx';
 import TimeLine from './Components/Pages/TimeLine Page/TimeLine.jsx';
 import Stats from './Components/Pages/Stats Page/Stats.jsx';
+import AddDetails from './Components/Pages/AddDetalils/AddDetails.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/timeline',
         element: <TimeLine></TimeLine>,
+      },
+      {
+        path: '/timeline/:id',
+        element: <AddDetails></AddDetails>,
       },
       {
         path: '/stats',

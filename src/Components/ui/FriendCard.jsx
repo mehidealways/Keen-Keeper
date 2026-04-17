@@ -1,19 +1,20 @@
-import React from 'react';
+import { Link } from 'react-router';
 
 const FriendCard = ({ friend }) => {
   return (
-    <div className="border text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+    <Link
+      to={`/timeline/${friend.id}`}
+      className="border text-center border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition"
+    >
       {/* Image */}
       <img
         src={friend.picture}
         alt={friend.name}
-        className=" h-40 object-cover rounded-md mb-3 mx-auto"
+        className=" h-30 object-cover rounded-md mb-3 mx-auto"
       />
 
       {/* Name */}
-      <h2 className="text-black font-semibold text-lg">
-        {friend.name}
-      </h2>
+      <h2 className="text-black font-semibold text-lg">{friend?.name}</h2>
 
       {/* Days */}
       <p className="text-gray-500 mb-2 text-sm">
@@ -31,7 +32,7 @@ const FriendCard = ({ friend }) => {
           </span>
         ))}
       </div>
-    </div>
+    </Link>
   );
 };
 
